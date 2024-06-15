@@ -8,7 +8,10 @@ import {
 
 describe("encrypt/decrypt aes-256-cbc", () => {
   let data = Buffer.from("123456789abcdefghijklmnopqrstuvwxyz");
+  let key: Buffer = Buffer.from("");
+
   beforeAll(() => {
+    key = generateMasterKey();
     vi.useFakeTimers();
   });
 
@@ -17,13 +20,17 @@ describe("encrypt/decrypt aes-256-cbc", () => {
   });
 
   it("is able to encrypt a buffer and decrpyt it to match the original", () => {
-    const masterKey = generateMasterKey();
-    const encrypted = encryptClientData(data, masterKey);
-    expect(hex(decryptClientData(encrypted, masterKey))).toBe(hex(data));
+    expect(
+      hex(
+        decryptClientData({
+          encryptedData: encryptClientData({ data, key }),
+          key,
+        })
+      )
+    ).toBe(hex(data));
   });
 
   it("encrypts data when given a key and a data buffer", () => {
-    const masterKey = generateMasterKey();
-    expect(hex(data)).not.toBe(hex(encryptClientData(data, masterKey)));
+    expect(hex(data)).not.toBe(hex(encryptClientData({ data, key })));
   });
 });

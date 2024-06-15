@@ -7,7 +7,7 @@
     "start": "turbo start",
     "test": "turbo test",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,md}\""
   },
   "devDependencies": {
     "turbo": "^2.0.4"
