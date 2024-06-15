@@ -1,3 +1,5 @@
 {
-  "extends": "../../packages/typescript-config/base.json"
+  "extends": "../../packages/typescript-config/base.json",
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.spec.ts"]
 }

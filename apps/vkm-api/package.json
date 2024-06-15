@@ -7,7 +7,7 @@
     "start": "tsnd --respawn ./src/server.ts | pino-pretty",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --watch"
   },
   "dependencies": {

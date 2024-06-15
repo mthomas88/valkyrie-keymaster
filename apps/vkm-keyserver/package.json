@@ -5,7 +5,7 @@
     "build": "node esbuild.config.js",
     "typecheck": "tsc --noEmit",
     "dev": "esbuild --watch",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --watch",
     "start": "tsnd --respawn ./src/server.ts | pino-pretty"
   },
