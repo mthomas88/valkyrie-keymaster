@@ -1,13 +1,14 @@
 {
-  "name": "@valkyrie-keymaster/vkm-keyserver",
+  "name": "@valkyrie-keymaster/api",
   "version": "0.1.0",
   "scripts": {
     "build": "node esbuild.config.js",
-    "typecheck": "tsc --noEmit",
     "dev": "esbuild --watch",
+    "start": "tsnd --respawn ./src/server.ts | pino-pretty",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest --watch",
-    "start": "tsnd --respawn ./src/server.ts | pino-pretty"
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "zod": "3.23.8",

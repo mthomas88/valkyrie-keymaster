@@ -31,12 +31,15 @@ export const encryptToFile = async (options: {
     key: masterKey,
   });
 
-  const encryptedFile = createFileData({
-    salt,
-    cipertext: hex(encryptedData),
-  });
-
-  await fs.writeFile(filePath, JSON.stringify(encryptedFile));
+  await fs.writeFile(
+    filePath,
+    JSON.stringify(
+      createFileData({
+        salt,
+        cipertext: hex(encryptedData),
+      })
+    )
+  );
 };
 
 /**
@@ -57,6 +60,6 @@ export const decryptFromFile = async (options: {
 
   return decryptClientData({
     encryptedData: Buffer.from(fileContents.cipertext, "hex"),
-    key: masterKey ? masterKey : generateMasterKey({ salt: fileContents.salt }),
+    key: masterKey ?? generateMasterKey({ salt: fileContents.salt }),
   }).toString("utf8");
 };

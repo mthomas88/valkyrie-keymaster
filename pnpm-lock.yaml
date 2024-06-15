@@ -12,7 +12,7 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
 
-  apps/vkm-api:
+  apps/api:
     dependencies:
       '@trpc/server':
         specifier: 10.45.2
@@ -52,7 +52,7 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.11.24)(@vitest/ui@1.6.0)
 
-  apps/vkm-core:
+  apps/core:
     devDependencies:
       '@types/node':
         specifier: ^20.11.24
@@ -76,7 +76,7 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.11.24)(@vitest/ui@1.6.0)
 
-  apps/vkm-keyserver:
+  apps/keyserv:
     dependencies:
       '@trpc/server':
         specifier: 10.45.2
