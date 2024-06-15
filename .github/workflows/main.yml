@@ -1,23 +1,25 @@
-name: CI
-
+name: CI Tests
 on:
   push:
     branches:
-      - main
-
+      - "*"
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      - name: Install dependencies
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+          cache-dependency-path: "pnpm-lock.yaml"
+
+      - name: Install deps
         run: pnpm install
-      - name: Build
+
+      - name: Build repo
         run: pnpm run build
-      - name: Run tests
+
+      - name: Execute test suite
         run: pnpm run test
