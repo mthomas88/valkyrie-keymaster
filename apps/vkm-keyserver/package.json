@@ -1,0 +1,28 @@
+{
+  "name": "@valkyrie-keymaster/vkm-keyserver",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "typecheck": "tsc --noEmit",
+    "dev": "esbuild --watch",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "start": "tsnd --respawn ./src/server.ts | pino-pretty"
+  },
+  "dependencies": {
+    "zod": "3.23.8",
+    "pino": "9.2.0",
+    "@trpc/server": "10.45.2"
+  },
+  "devDependencies": {
+    "pino-pretty": "^11.2.1",
+    "@types/node": "^20.11.24",
+    "@vitest/ui": "^1.6.0",
+    "esbuild": "^0.21.5",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.4",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0",
+    "ts-node-dev": "2.0.0"
+  }
+}

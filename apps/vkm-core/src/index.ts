@@ -8,12 +8,12 @@ export const hex = (buffer: Buffer) => {
   return buffer.toString("hex");
 };
 
-const cipher16Byte = (mkey: Buffer) => {
-  return crypto.createCipheriv("aes-256-cbc", mkey, Buffer.alloc(16));
+const cipher16Byte = (masterkey: Buffer) => {
+  return crypto.createCipheriv("aes-256-cbc", masterkey, Buffer.alloc(16));
 };
 
-const decipher16Byte = (mkey: Buffer) => {
-  return crypto.createDecipheriv("aes-256-cbc", mkey, Buffer.alloc(16));
+const decipher16Byte = (masterkey: Buffer) => {
+  return crypto.createDecipheriv("aes-256-cbc", masterkey, Buffer.alloc(16));
 };
 
 export const generateMasterKey = (salt = generate16ByteSalt()) => {
