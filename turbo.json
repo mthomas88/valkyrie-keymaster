@@ -1,23 +1,25 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build": {
+    "start": {
       "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"],
+      "persistent": true,
+      "cache": false
+    },
+    "typecheck": {},
+    "build": {
+      "dependsOn": ["^typecheck"],
       "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"],
       "outputs": ["dist/**"]
     },
     "test": {
-      "dependsOn": ["^build"],
-      "outputs": []
+      "dependsOn": ["^build"]
     },
-    "watch-tests": {
+    "test:watch": {
       "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "lint": {},
-    "dev": {
-      "cache": false,
       "persistent": true
-    }
+    },
+    "lint": {}
   }
 }
