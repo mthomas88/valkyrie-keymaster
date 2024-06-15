@@ -25,8 +25,8 @@ describe("encrypt/decrypt aes-256-cbc", () => {
         decryptClientData({
           encryptedData: encryptClientData({ data, key }),
           key,
-        })
-      )
+        }),
+      ),
     ).toBe(hex(data));
   });
 

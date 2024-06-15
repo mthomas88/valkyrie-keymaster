@@ -37,8 +37,8 @@ export const encryptToFile = async (options: {
       createFileData({
         salt,
         cipertext: hex(encryptedData),
-      })
-    )
+      }),
+    ),
   );
 };
 
