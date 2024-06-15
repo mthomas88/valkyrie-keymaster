@@ -160,6 +160,21 @@ importers:
 
   apps/website:
     dependencies:
+      '@tanstack/vue-form':
+        specifier: ^0.21.0
+        version: 0.21.0(vue@3.4.29)
+      '@tanstack/vue-query':
+        specifier: ^5.45.0
+        version: 5.45.0(vue@3.4.29)
+      '@tanstack/vue-table':
+        specifier: ^8.17.3
+        version: 8.17.3(vue@3.4.29)
+      '@tanstack/zod-form-adapter':
+        specifier: ^0.21.0
+        version: 0.21.0(zod@3.23.8)
+      '@trpc/client':
+        specifier: 10.45.2
+        version: 10.45.2(@trpc/server@10.45.2)
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.29)
@@ -169,6 +184,9 @@ importers:
       vue-router:
         specifier: ^4.3.0
         version: 4.3.3(vue@3.4.29)
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.8.0
@@ -1288,6 +1306,93 @@ packages:
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
+
+  /@tanstack/form-core@0.21.0:
+    resolution: {integrity: sha512-ZhiG74PSZ5ECZXcidD7iEabQTMr8YtEdshGB3ai3ZXsjIHUF185sWyHc1N6VyccUaLJ6/IiNbUdjTMhZWjdRyg==}
+    dependencies:
+      '@tanstack/store': 0.3.1
+    dev: false
+
+  /@tanstack/match-sorter-utils@8.15.1:
+    resolution: {integrity: sha512-PnVV3d2poenUM31ZbZi/yXkBu3J7kd5k2u51CGwwNojag451AjTH9N6n41yjXz2fpLeewleyLBmNS6+HcGDlXw==}
+    engines: {node: '>=12'}
+    dependencies:
+      remove-accents: 0.5.0
+    dev: false
+
+  /@tanstack/query-core@5.45.0:
+    resolution: {integrity: sha512-RVfIZQmFUTdjhSAAblvueimfngYyfN6HlwaJUPK71PKd7yi43Vs1S/rdimmZedPWX/WGppcq/U1HOj7O7FwYxw==}
+    dev: false
+
+  /@tanstack/store@0.3.1:
+    resolution: {integrity: sha512-A49KN8SpLMWaNmZGPa9K982RQ81W+m7W6iStcQVeKeVS70JZRqkF0fDwKByREPq6qz9/kS0aQFOPQ0W6wIeU5g==}
+    dev: false
+
+  /@tanstack/table-core@8.17.3:
+    resolution: {integrity: sha512-mPBodDGVL+fl6d90wUREepHa/7lhsghg2A3vFpakEhrhtbIlgNAZiMr7ccTgak5qbHqF14Fwy+W1yFWQt+WmYQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /@tanstack/vue-form@0.21.0(vue@3.4.29):
+    resolution: {integrity: sha512-atl1eZ+IV3wVE/X4YdTwipRLqsPbA734yIpvBwxc9YrZxr4UsL32OQd9XZFYwSvXMQ39v1sAtCXfZHREcWY00A==}
+    peerDependencies:
+      vue: ^3.3.0
+    dependencies:
+      '@tanstack/form-core': 0.21.0
+      '@tanstack/vue-store': 0.3.1(vue@3.4.29)
+      vue: 3.4.29(typescript@5.4.5)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: false
+
+  /@tanstack/vue-query@5.45.0(vue@3.4.29):
+    resolution: {integrity: sha512-WogAH4+xDPWbiK9CUXAE4cQiCyvWeYZI3g3/onKbkb3tVnoEPRhbGHANgxpfAEFY165Vj4afKnI3hkVQvr7aHA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.2
+      vue: ^2.6.0 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@tanstack/match-sorter-utils': 8.15.1
+      '@tanstack/query-core': 5.45.0
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.29(typescript@5.4.5)
+      vue-demi: 0.14.8(vue@3.4.29)
+    dev: false
+
+  /@tanstack/vue-store@0.3.1(vue@3.4.29):
+    resolution: {integrity: sha512-7XhuxAO6z4FWz8QnluTd4njy4yh6yHVD+dVMV60kDNck+ZfnU8VrENMGaA5edIq5zX3ooAUcOtOXh7KgQv1P1A==}
+    peerDependencies:
+      '@vue/composition-api': ^1.2.1
+      vue: ^2.5.0 || ^3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@tanstack/store': 0.3.1
+      vue: 3.4.29(typescript@5.4.5)
+      vue-demi: 0.14.8(vue@3.4.29)
+    dev: false
+
+  /@tanstack/vue-table@8.17.3(vue@3.4.29):
+    resolution: {integrity: sha512-19amh2JJR4cFKmi3ZQERwwJg1ucoLm955Xg+RzypCMn6/dmHEzDu2TkVH/riaZFw5JbVfl17MoobMjWNE/fAEg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: '>=3.2'
+    dependencies:
+      '@tanstack/table-core': 8.17.3
+      vue: 3.4.29(typescript@5.4.5)
+    dev: false
+
+  /@tanstack/zod-form-adapter@0.21.0(zod@3.23.8):
+    resolution: {integrity: sha512-VHVQDBFmrEmmCOBgJ1TmSgDD0weXHesVjv3kcuGZ/2BFawOUb2eb+jn8BYHsZSM/Ea2QP577R3mtCHNOohojZA==}
+    peerDependencies:
+      zod: ^3.x
+    dependencies:
+      '@tanstack/form-core': 0.21.0
+      zod: 3.23.8
+    dev: false
 
   /@trpc/client@10.45.2(@trpc/server@10.45.2):
     resolution: {integrity: sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg==}
@@ -4852,6 +4957,10 @@ packages:
   /real-require@0.2.0:
     resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
     engines: {node: '>= 12.13.0'}
+    dev: false
+
+  /remove-accents@0.5.0:
+    resolution: {integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==}
     dev: false
 
   /request-progress@3.0.0:
