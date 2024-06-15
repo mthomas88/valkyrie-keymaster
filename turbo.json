@@ -2,15 +2,15 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "start": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"],
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$"],
       "persistent": true,
       "cache": false
     },
     "typecheck": {},
     "build": {
-      "dependsOn": ["^typecheck"],
-      "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"],
+      "dependsOn": ["typecheck"],
+      "inputs": ["$TURBO_DEFAULT$"],
       "outputs": ["dist/**"],
       "cache": true
     },

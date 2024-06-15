@@ -2,7 +2,7 @@
   "name": "@valkyrie-keymaster/app",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo typecheck build",
     "dev": "turbo dev",
     "start": "turbo start",
     "test": "turbo test",
