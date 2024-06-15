@@ -1,20 +1,11 @@
 {
-  "name": "valkyrie-keymaster",
+  "name": "@valkyrie-keymaster/app",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.24",
-    "@vitest/ui": "^1.6.0",
-    "esbuild": "^0.21.5",
-    "prettier": "^3.2.5",
-    "turbo": "^2.0.4",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
