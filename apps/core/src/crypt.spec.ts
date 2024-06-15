@@ -23,7 +23,7 @@ describe("encrypt/decrypt aes-256-cbc", () => {
     expect(
       hex(
         decryptClientData({
-          encryptedData: encryptClientData({ data, key }),
+          data: encryptClientData({ data, key }),
           key,
         }),
       ),
