@@ -2,7 +2,7 @@
   "name": "@valkyrie-keymaster/vkm-core",
   "version": "0.1.0",
   "scripts": {
-    "build": "esbuild",
+    "build": "node esbuild.config.js",
     "dev": "esbuild --watch",
     "test": "vitest run",
     "watch": "vitest --watch"
