@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import {
-  generate16ByteSalt,
   encryptClientData,
   hex,
   decryptClientData,

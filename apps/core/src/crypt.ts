@@ -24,8 +24,7 @@ const decipher16Byte = (key: Buffer) => {
  */
 export const generateMasterKey = (opts: { salt?: string } = {}) => {
   const salt = opts?.salt || "default-salt";
-  const hash = crypto.createHash("sha256");
-  hash.update(salt);
+  const hash = crypto.createHash("sha256").update(salt);
   return Buffer.from(hash.digest());
 };
 
