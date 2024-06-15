@@ -15,10 +15,10 @@
       "cache": true
     },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     },
     "test:watch": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build"],
       "persistent": true
     },
     "lint": {}

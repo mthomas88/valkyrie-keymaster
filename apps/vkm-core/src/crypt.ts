@@ -4,9 +4,6 @@ export const generate16ByteSalt = () => {
   return crypto.randomBytes(16).toString("hex");
 };
 
-export const createFileData = (args: { salt: string; cipertext: string }) =>
-  args;
-
 export const hex = (buffer: Buffer) => {
   return buffer.toString("hex");
 };
