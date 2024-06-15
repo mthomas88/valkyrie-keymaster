@@ -6,11 +6,16 @@
     "dev": "turbo dev",
     "start": "turbo start",
     "test": "turbo test",
+    "test-dev": "vitest --passWithNoTests --coverage --coverage.all=false",
+    "test-ui": "vitest --ui --passWithNoTests --coverage --coverage.all=false",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,md}\""
   },
   "devDependencies": {
-    "turbo": "^2.0.4"
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "1.6.0",
+    "turbo": "^2.0.4",
+    "vitest": "1.6.0"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {

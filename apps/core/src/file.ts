@@ -22,12 +22,14 @@ export const encryptToFile = async ({
   data,
   filePath,
   key,
+  ...rest
 }: {
   data: unknown;
   filePath: string;
   key: Buffer;
+  salt?: string;
 }) => {
-  const salt = generate16ByteSalt();
+  const salt = rest.salt ?? "default-salt";
 
   const encryptedData = encryptClientData({
     data: Buffer.from(JSON.stringify(data)),

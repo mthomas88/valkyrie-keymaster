@@ -5,11 +5,11 @@
     "build": "node esbuild.config.js",
     "typecheck": "tsc --noEmit",
     "dev": "esbuild --watch",
-    "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest --watch"
+    "test": "vitest run --passWithNoTests  --coverage --coverage.all=false"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
+    "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "esbuild": "^0.21.5",
     "prettier": "^3.2.5",

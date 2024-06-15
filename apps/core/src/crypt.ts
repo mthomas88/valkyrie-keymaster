@@ -23,11 +23,10 @@ const decipher16Byte = (key: Buffer) => {
  * @returns Master key buffer.
  */
 export const generateMasterKey = (opts: { salt?: string } = {}) => {
-  const salt = opts.salt || generate16ByteSalt();
-  const bytes = crypto.randomBytes(32);
-  const derivedKey = crypto.pbkdf2Sync(bytes, salt, 100000, 32, "sha512");
-
-  return Buffer.from(derivedKey);
+  const salt = opts?.salt || "default-salt";
+  const hash = crypto.createHash("sha256");
+  hash.update(salt);
+  return Buffer.from(hash.digest());
 };
 
 /**
