@@ -9,13 +9,17 @@
     "benchmark": "vitest bench --passWithNoTests  --coverage --coverage.all=false"
   },
   "devDependencies": {
+    "@eslint/js": "^9.5.0",
     "@types/node": "^20.11.24",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "esbuild": "^0.21.5",
+    "eslint": "9.x",
+    "globals": "^15.4.0",
     "prettier": "^3.2.5",
     "turbo": "^2.0.4",
     "typescript": "^5.4.5",
+    "typescript-eslint": "^7.13.0",
     "vitest": "^1.6.0"
   }
 }

@@ -24,8 +24,10 @@ export function createServer(opts: ServerOptions) {
       router,
       createContext,
       onError({ path, error }) {
-        // report to error monitoring
-        console.error(`Error in tRPC handler on path '${path}':`, error);
+        logger.error({
+          error,
+          msg: `Error in tRPC handler on path '${path}':`,
+        });
       },
     } satisfies FastifyTRPCPluginOptions<Router>["trpcOptions"],
   });
