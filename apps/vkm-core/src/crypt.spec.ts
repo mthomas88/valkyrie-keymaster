@@ -4,7 +4,7 @@ import {
   encryptClientData,
   generateMasterKey,
   hex,
-} from ".";
+} from "./crypt";
 
 describe("encrypt/decrypt aes-256-cbc", () => {
   let data = Buffer.from("123456789abcdefghijklmnopqrstuvwxyz");

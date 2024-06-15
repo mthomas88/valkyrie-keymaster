@@ -11,7 +11,8 @@
     "build": {
       "dependsOn": ["^typecheck"],
       "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": true
     },
     "test": {
       "dependsOn": ["^build"]
