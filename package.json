@@ -1,6 +1,9 @@
 {
   "name": "@valkyrie-keymaster/app",
   "private": true,
+  "description": "Password and encryption management tool",
+  "license": "MIT",
+  "version": "0.0.1",
   "scripts": {
     "build": "turbo typecheck build",
     "dev": "turbo dev",
